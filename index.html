@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tetris POO</title>
+    <link rel="stylesheet" href="styles/game.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="intro-overlay">
+        <div class="intro-content">
+            <h1>TETRIS</h1>
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
+            <p class="loading-text">Cargando juego...</p>
+        </div>
+    </div>
+
+    <div class="game-container" style="display: none;">
+        <h1>Tetris Orientado a Objetos</h1>
+        
+        <div class="game-area">
+            <canvas id="gameCanvas" width="300" height="600"></canvas>
+            
+            <div class="game-panel">
+                <div class="stats">
+                    <div><strong>Puntaje:</strong> <span id="score">0</span></div>
+                    <div><strong>Nivel:</strong> <span id="level">1</span></div>
+                    <div><strong>Líneas:</strong> <span id="line">0</span></div>
+                </div>
+                
+                <div class="controls">
+                    <h3>Controles</h3>
+                    <p>← → : Movimiento horizontal</p>
+                    <p>↑ : Rotar pieza</p>
+                    <p>↓ : Bajar más rápido</p>
+                    <p>Espacio: Caída instantánea</p>
+                    <p>R: Reiniciar juego</p>
+
+                    <div id="gamepadControls" class="hidden">
+                        <h4 class="gamepad-title">Gamepad</h4>
+                        <p>D-Pad: Mover / Bajar</p>
+                        <p>Botón A/X: Caída Rápida</p>
+                        <p>Botón B/O: Rotar</p>
+                    </div>
+                </div>
+                
+                <div class="system-panel">
+                    <h3>Estado del Sistema</h3>
+                    <div id="systemStatus">Inicializando juego...</div>
+                    <div id="dbStatus">Conectando a base de datos...</div>
+                </div>
+                
+                <div class="audio-control">
+                    <button id="toggleMusic">Activar Música</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="leaderboard">
+            <h2>Top 10 Puntajes</h2>
+            <div id="scoresList">Cargando...</div>
+        </div>
+        
+        <div class="virtual-console">
+            <h3>Consola Virtual</h3>
+            <div id="consoleOutput"></div>
+        </div>
+    </div>
+
+    <script src="scripts/DatabaseManager.js"></script>
+    <script src="scripts/game.js"></script>
+</body>
+</html>
